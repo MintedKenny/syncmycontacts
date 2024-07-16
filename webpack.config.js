@@ -12,15 +12,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
   },
-  plugins: [
-    new CopyPlugin({
-      patterns: [
-        { from: 'public' },
-        { from: 'src/popup/popup.html', to: 'popup.html' },
-      ],
-    }),
-    new Dotenv(),
-  ],
   module: {
     rules: [
       {
@@ -29,4 +20,12 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: 'public' },
+      ],
+    }),
+    new Dotenv(),
+  ],
 };
